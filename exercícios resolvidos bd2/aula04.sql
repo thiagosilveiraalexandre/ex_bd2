@@ -28,12 +28,21 @@ FROM VW_COLABORADORES
 GROUP BY Cargo;
 
 
---Identificar a origem dos colaboradores atrav�s de seus endere�os. Apresentar as informa��es de Endere�o, Pa�s, Estado e Cidade:
+--Identificar a origem dos colaboradores através de seus endereços. Apresentar as informações de Endereço, País, Estado e Cidade:
 SELECT Endereco, Pais, Estado, Cidade
 FROM VW_COLABORADORES;
 
 
---Contabilizar o n�mero de colaboradores por Pa�s e Estado:
+--Em nossos exercícios vamos utilizar o banco de dados de exemplo fornecido pela Microsoft 
+--AdventureWorks (2019). Deve ser criada uma a VIEW de nome VW_COLABORADORES capaz de atender 
+--aos requisitos abaixo. Essa view será a única fonte de consulta de dados. 
+--1. Listar todos os colaboradores da empresa com: Nome Completo, Cargo, Data de Nascimento, Estado 
+--Civil e Idade [ usar year(getdate() – year(<campo>) ];
+--2. Contabilizar a quantidade de colaboradores por cargo;
+--3. Identificar a origem destes colaboradores através de seus endereços. Apresentar as informações de 
+--Endereço, Pais, Estado, Cidade;
+--4. Contabilizar o número de colaboradores por País e Estado;
+--Contabilizar o número de colaboradores por País e Estado:
 SELECT Pais, Estado, COUNT(*) AS Quantidade
 FROM VW_COLABORADORES
 GROUP BY Pais, Estado;
